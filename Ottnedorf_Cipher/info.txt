@@ -1,0 +1,15 @@
+The script starts by defining two functions, encrypt_ottendorf(message, key) and decrypt_ottendorf(encrypted_message, key). These functions are used for encrypting and decrypting messages using the Ottendorf Cipher, respectively.
+
+The encrypt_ottendorf(message, key) method takes in two inputs:
+
+message: This is the message that you want to encrypt. It can be any string of text that you want to keep secret.
+key : This is the key that is used to encrypt the message. The key is a string of text that is used to scramble the message so that it can't be read without knowing the key.
+The function then goes through each character in the message, if the character is a letter of the alphabet, it converts the character to a number based on its position in the alphabet (a=0, b=1, c=2, etc.). It then takes the corresponding letter in the key (based on the position of the letter in the message) and converts it to a number in the same way. It then adds the two numbers together and finds the remainder when divided by 26. This new number is then converted back into a letter and added to the encrypted message. If the character is not a letter of the alphabet, it is added to the encrypted message as is.
+
+The decrypt_ottendorf(encrypted_message, key) method takes in two inputs:
+
+encrypted_message: This is the message that you want to decrypt. It is the message that was previously encrypted using the encrypt_ottendorf() method.
+key: This is the key that was used to encrypt the message. It is the same key that you used when you encrypted the message.
+This function works in the same way as the encryption function but in reverse, it takes the number that represents the letter in the encrypted message, takes the corresponding letter in the key and converts it to a number, subtracts this number from the number that represents the letter in the encrypted message, finds the remainder when divided by 26, and converts the result back into a letter and added to the decrypted message.
+
+Finally, the script prompts the user to enter a message and a key, it then encrypts the message using the key, prints out the encrypted message and the time taken to decrypt the message using the key, and then the script prints out the decrypted message.
