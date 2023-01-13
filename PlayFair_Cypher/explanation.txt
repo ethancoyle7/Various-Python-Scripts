@@ -1,0 +1,25 @@
+# encrypt(key, message): This function takes a key and a message as input, and returns the encrypted message. It first creates an encryption matrix using the key, prepares the message by removing spaces and repeating letters, and then encrypts the message by encrypting each pair of letters using the encrypt_pair(matrix, pair) function.
+
+# decrypt(key, encrypted_message): This function takes a key and an encrypted message as input, and returns the decrypted message. It first creates an encryption matrix using the key, decrypts the message by decrypting each pair of letters using the decrypt_pair(matrix, pair) function, and returns the decrypted message.
+
+# create_matrix(key): This function takes a key as input and returns the encryption matrix. It initializes a 5x5 matrix and fills it with the letters of the key and the remaining letters of the alphabet, so that no letter is repeated.
+
+# encrypt_pair(matrix, pair): This function takes an encryption matrix and a pair of letters as input, and returns the encrypted pair of letters. It first gets the coordinates of the pair of letters in the matrix using the get_coordinates(matrix, pair) function. It then encrypts the pair according to the rules of the Playfair Cipher, which is to shift the letters one position to the right on the same row or column, or to switch the positions of the letters on the matrix if they are in different row and column.
+
+# decrypt_pair(matrix, pair): This function takes an encryption matrix and a pair of letters as input, and returns the decrypted pair of letters. It works similarly to the encrypt_pair(matrix, pair) function, but it decrypts the pair by shifting the letters one position to the left on the same row or column, or to switch the positions of the letters on the matrix if they are in different row and column.
+
+# get_coordinates(matrix, pair): This function takes an encryption matrix and a pair of letters as input and returns the coordinates of the two letters in the matrix. It loops through the matrix using two nested loops and checks if the current element is equal to either letter of the pair. If it is, it assigns the coordinates of that element to the appropriate variables (x1, y1 or x2, y2).
+
+# prepare_message(message): This function takes a message as input and prepares it for encryption. It removes spaces and converts the message to uppercase letters, it filters repeated letters and if the message length is odd it appends an X to it.
+
+# filter_repeated_letters(message): This function takes a message as input and filters out any repeated letters in it.
+
+# encrypt_message(): This function prompts the user to enter the key and the message to be encrypted, encrypts the message using the Playfair Cipher, and then displays the encrypted message and the time it took to encrypt it.
+
+# decrypt_message(): This function prompts the user to enter the key and the encrypted message, decrypts the message using the Playfair Cipher, and then displays the decrypted message and the time it took to decrypt it.
+
+# time.time() is a built-in python library that allows us to measure the time it takes to execute some code, by returning the current time in seconds since the epoch.
+
+# We use this function to measure the time taken to encrypt and decrypt the message by capturing the current time before the encryption/decryption process starts, and then again after it ends. We then subtract the two values to get the time taken in seconds.
+
+# In summary, the code snippet uses the Playfair Cipher encryption method to encrypt a message that is input by the user, it also calculates the time it takes to encrypt the message, then it can also be used to decrypt the message using the same key and time it takes to decrypt the message.
