@@ -1,9 +1,12 @@
 import csv
 
 # specify the file path and column to search
-file_path = 'file.csv'
+file_path = 'data.csv'
 column_to_search = 'column_name'
-date_to_search = '2022-08-25T00:00:00.000z'
+date_to_search = '2022-08-25T00:00:00.000Z'
+
+original_line_count = 0 # variable to store the original line count
+filtered_line_count = 0 # variable to store the filtered line count
 
 # read the CSV file
 with open(file_path, 'r') as file:
@@ -17,6 +20,11 @@ with open(file_path, 'r') as file:
 
         # iterate through the rows in the CSV file
         for row in reader:
+            original_line_count += 1 # increment the original line count for each row
             # check if the specified column contains the specified date
             if row[column_to_search] != date_to_search:
                 writer.writerow(row)
+                filtered_line_count += 1 # increment the filtered line count for each row that is written
+
+print(f'Number of lines in original file: {original_line_count}')
+print(f'Number of lines in filtered file: {filtered_line_count}')
